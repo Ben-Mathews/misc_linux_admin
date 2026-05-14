@@ -126,7 +126,7 @@ if ! systemd-detect-virt --quiet --vm || [[ "$force_all" == true ]]; then
     #
     # VS code
     #
-    pushd /tmp && wget -O code_latest_amd64.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" && sudo apt install --allow-releaseinfo-change -y ./code_latest_amd64.deb && popd
+    pushd /tmp && wget -O code_latest_amd64.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" && sudo apt install -y ./code_latest_amd64.deb && popd
 
     #
     # Obsidian
