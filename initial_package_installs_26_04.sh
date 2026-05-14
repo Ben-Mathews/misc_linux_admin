@@ -147,6 +147,13 @@ if ! systemd-detect-virt --quiet --vm || [[ "$force_all" == true ]]; then
 fi
 
 #
+# Get rid of crap
+#
+sudo apt-get purge -y aisleriot gnome-mahjongg gnome-mines gnome-sudoku rhythmbox simple-scan totem thunderbird yelp
+sudo apt-get purge -y apport whoopsie ubuntu-report
+sudo apt-get autoremove --purge -y
+
+#
 # Fix bold fonts in taskbar for dash-to-panel
 #
 css="$HOME/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/stylesheet.css"; grep -q "font-weight: normal" "$css" || cat <<'EOF' >> "$css"
