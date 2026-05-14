@@ -172,5 +172,13 @@ gnome-extensions disable dash-to-panel@jderose9.github.com && gnome-extensions e
 rm -f ~/enable_dash_to_panel.sh
 EOF
 chmod u+x ~/enable_dash_to_panel.sh
-echo -e "#\n#\n#\nLog out, log back in, and run run ~/enable_dash_to_panel.sh to enable and configure Dash-to-Panel\n#\n#\n#\n"
+echo -e "#\n#\n#\n#\n#\n#\nLog out, log back in, and run run ~/enable_dash_to_panel.sh to enable and configure Dash-to-Panel\n#\n#\n#\n#\n#\n#\n"
+
+if [[ -f "./firefox_snap_debloat.sh" ]]; then
+    echo "Running firefox_snap_debloat.sh..."
+    chmod +x ./firefox_snap_debloat.sh
+    ./firefox_snap_debloat.sh
+else
+    echo "Skipping Firefox Snap debloat; firefox_snap_debloat.sh not found."
+fi
 
